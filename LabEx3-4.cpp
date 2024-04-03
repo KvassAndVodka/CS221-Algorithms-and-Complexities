@@ -28,7 +28,8 @@ int minEditDistance(string str1, string str2) {
         for (int j = 1; j <= n; j++) {
         if (str1[i - 1] == str2[j - 1]) {
             dp[i][j] = dp[i - 1][j - 1];
-        } else {
+        } 
+        else {
             dp[i][j] = 1 + min(dp[i - 1][j], min(dp[i][j - 1], dp[i - 1][j - 1]));
         }
         }
@@ -39,12 +40,8 @@ int minEditDistance(string str1, string str2) {
 }
 
 int main() {
-    string str1, str2;
-
-    cout << "str1: ";
-    cin >> str1;
-    cout << "str2: ";
-    cin >> str2;
+    string str1 = "kitten";
+    string str2 = "sittings";
 
     int minDistance = minEditDistance(str1, str2);
 
